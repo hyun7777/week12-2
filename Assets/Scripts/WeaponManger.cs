@@ -78,7 +78,7 @@ public class WeaponManager : MonoBehaviour
         if (!isChangeWeapon)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
-                StartCoroutine(ChangeWeaponCoroutine("HAND", "¸Ç¼Õ"));
+                StartCoroutine(ChangeWeaponCoroutine("HAND", "Hand"));
             else if (Input.GetKeyDown(KeyCode.Alpha2))
                 StartCoroutine(ChangeWeaponCoroutine("GUN", "SubMachineGun1"));
             else if (Input.GetKeyDown(KeyCode.Alpha3))
