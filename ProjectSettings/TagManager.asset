@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Rock
   - Item
-  - Tree
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -19,7 +19,7 @@ TagManager:
   - 
   - Weapon
   - Item
-  - 
+  - Player
   - 
   - 
   - 
