@@ -7,6 +7,7 @@ TagManager:
   - Rock
   - Item
   - NPC
+  - Building
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Weapon
   - Item
   - Player
-  - 
-  - 
+  - Terrain
+  - Building
   - 
   - 
   - 
