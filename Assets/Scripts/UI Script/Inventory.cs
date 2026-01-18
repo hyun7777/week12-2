@@ -1,19 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+
     public static bool inventoryActivated = false;
+
 
     // ÇÊ¿äÇÑ ÄÄÆ÷³ÍÆ®
     [SerializeField]
-    private GameObject go_InvnetoryBase;
+    private GameObject go_InventoryBase;
     [SerializeField]
     private GameObject go_SlotsParent;
 
-    // ½½·Ôµé
+    // ½½·Ôµé.
     private Slot[] slots;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    // Use this for initialization
     void Start()
     {
         slots = go_SlotsParent.GetComponentsInChildren<Slot>();
@@ -27,7 +32,7 @@ public class Inventory : MonoBehaviour
 
     private void TryOpenInventory()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             inventoryActivated = !inventoryActivated;
 
@@ -40,12 +45,12 @@ public class Inventory : MonoBehaviour
 
     private void OpenInventory()
     {
-        go_InvnetoryBase.SetActive(true);
+        go_InventoryBase.SetActive(true);
     }
 
     private void CloseInventory()
     {
-        go_InvnetoryBase.SetActive(false);
+        go_InventoryBase.SetActive(false);
     }
 
     public void AcquireItem(Item _item, int _count = 1)

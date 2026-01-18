@@ -14,7 +14,10 @@ public class CloseWeapon : MonoBehaviour
     public float workSpeed;
     public float attackDelay;
     public float attackDelayA;
-    public float attackDelayB;
+    public float attackDelayB; 
+    public float workDelay;
+    public float workDelayA;
+    public float workDelayB;
 
     public Animator anim;
 

@@ -43,5 +43,4 @@ public class PickaxeController : CloseWeaponController
         base.CloseWeaponChange(_closeWeapon);
         isActivate = true;
     }
-
 }

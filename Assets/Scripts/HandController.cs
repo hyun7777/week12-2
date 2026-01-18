@@ -1,6 +1,5 @@
 using System.Collections;
-using System.Reflection;
-using UnityEditor.PackageManager;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HandController : CloseWeaponController
@@ -33,5 +32,4 @@ public class HandController : CloseWeaponController
         base.CloseWeaponChange(_closeWeapon);
         isActivate = true;
     }
-
 }

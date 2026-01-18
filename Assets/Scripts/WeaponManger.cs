@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
+
 
 public class WeaponManager : MonoBehaviour
 {
+
     // 무기 중복 교체 실행 방지.
     public static bool isChangeWeapon = false;
 
@@ -139,5 +140,4 @@ public class WeaponManager : MonoBehaviour
         else if (_type == "PICKAXE")
             thePickaxeController.CloseWeaponChange(pickaxeDictionary[_name]);
     }
-
 }

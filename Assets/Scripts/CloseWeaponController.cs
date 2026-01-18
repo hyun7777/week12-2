@@ -1,9 +1,11 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class CloseWeaponController : MonoBehaviour
 {
     // 미완성 클래스 = 추상 클래스.
+
 
     // 현재 장착된 Hand형 타입 무기.
     [SerializeField]
@@ -16,19 +18,27 @@ public abstract class CloseWeaponController : MonoBehaviour
     protected RaycastHit hitInfo;
 
 
+    //필요한 컴포넌트
+    private PlayerController thePlayerController;
+
+    void Start()
+    {
+        thePlayerController = FindAnyObjectByType<PlayerController>();
+    }
+
     protected void TryAttack()
     {
-        if (Input.GetButton("Fire1"))
+        if (!Inventory.inventoryActivated)
         {
-            if (!isAttack)
+            if (Input.GetButton("Fire1"))
             {
-                StartCoroutine(AttackCoroutine());
+                if (!isAttack)
+                {
+                    StartCoroutine(AttackCoroutine());
+                }
             }
         }
     }
-
-    
-    
 
     protected IEnumerator AttackCoroutine()
     {
@@ -46,13 +56,12 @@ public abstract class CloseWeaponController : MonoBehaviour
 
         yield return new WaitForSeconds(currentCloseWeapon.attackDelay - currentCloseWeapon.attackDelayA - currentCloseWeapon.attackDelayB);
         isAttack = false;
+
     }
 
 
     // 미완성 = 추상 코루틴.
-    protected abstract IEnumerator HitCoroutine(); 
-    
-
+    protected abstract IEnumerator HitCoroutine();
 
 
     protected bool CheckObject()
@@ -78,3 +87,4 @@ public abstract class CloseWeaponController : MonoBehaviour
         currentCloseWeapon.gameObject.SetActive(true);
     }
 }
+
